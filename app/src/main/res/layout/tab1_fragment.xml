@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:textSize="25sp"
+        android:text="Profile"
+        android:layout_marginTop="40dp"
+        android:id="@+id/textTab1"/>
+
+    <EditText
+        android:id="@+id/etNameInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/textTab1"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="133dp"
+        android:ems="10"
+        android:inputType="none|textPersonName"
+        android:text="Name" />
+
+    <EditText
+        android:id="@+id/etSurnameInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/etNameInfo"
+        android:layout_alignEnd="@+id/textTab1"
+        android:layout_marginTop="18dp"
+        android:ems="10"
+        android:inputType="none|textPersonName"
+        android:text="Surname" />
+
+    <EditText
+        android:id="@+id/etEmailInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/etSurnameInfo"
+        android:layout_alignEnd="@+id/textTab1"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="21dp"
+        android:layout_marginEnd="-1dp"
+        android:layout_marginBottom="256dp"
+        android:ems="10"
+        android:inputType="none|textPersonName"
+        android:text="Email" />
+
+    <EditText
+        android:id="@+id/etSportInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/etTeamInfo"
+        android:layout_alignStart="@+id/etNameInfo"
+        android:layout_marginStart="-2dp"
+        android:layout_marginBottom="28dp"
+        android:ems="10"
+        android:inputType="none|textPersonName"
+        android:text="Sport" />
+
+    <EditText
+        android:id="@+id/etTeamInfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/etNameInfo"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginBottom="121dp"
+        android:ems="10"
+        android:inputType="none|textPersonName"
+        android:text="Team" />
+
+
+</RelativeLayout>
