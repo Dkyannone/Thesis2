@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Master Interface</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link href="style.css" rel="stylesheet" />
+</head>
+
+<body>
+<nav class="navbar navbar-default navebar-fixed-top" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navar-collapse-main"> 
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+
+          </button>
+          <a class="navbar-brand" href="#"><b class="head">Sportz App</b></a>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar-collapse-main">
+
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="/index.html">Users</a></li>
+            <li><a href="/notifications.html">Notifications</a></li>
+            <li><a class="active" href="/gamestats.html">Game Stats</a></li>
+            <li><a href="/team.html">Teams</a></li>
+          </ul>
+
+        </div> 
+    </div>
+</nav>
+
+<body>
+<div>
+    <div class="column">
+        <h2>Update Statistic</h2>
+        <h4>note: you must enter a playerId teamId and gameId for the statistic
+        to apply to the proper individual. Also statistic type and a value for
+        that statistic is required as well. Ex: type: groundball value: 10</h4>
+        <div class="section"/>
+            <a name="createuser"></a>
+            <form>
+            <input type="hidden" name="action" value="createuser"/>
+            <label>playerId:</label>      <input type="text" name="playerId"/><br/>
+            <label>teamId:</label>   <input type="text" name="teamId"/><br/>
+            <label>gameId:</label>  <input type="text" name="gameId"/><br/>
+            <label>type:</label>     <input type="text" name="type"/><br/>
+            <label>value:</label>     <input type="text" name="num"/><br/>    
+            <label>sport:</label>      <input type="text" name="sport"/><br/>
+            <button type="submit">Submit</button>
+            </form>
+        </div>
+        
+    </div>
+    <br>Server Response:<br/>
+            <div class="server-response"></div>
+</div>
+</body>
+
+<div id="fixed">  
+</div>
+
+</body>
+</html>

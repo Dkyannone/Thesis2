@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script>
+const API = 'process.php';
+
+jQuery(document).ready(function(){
+    jQuery('form').on('submit', function(e){
+        var jqElm = jQuery(this);
+        jqElm.parents('.section').find('div').html('');
+
+        console.log(removeEmptyParams(jqElm.serialize()));
+        var post = jQuery.post(API, removeEmptyParams(jqElm.serialize()), function(d){
+            console.log(typeof d);
+            if(typeof d === "object"){
+                jqElm.parents('.section').find('div').html(
+                    JSON.stringify(d, undefined, 2)).addClass('pre');
+            } else {
+                try{
+                    jqElm.parents('.section').find('div').html(
+                        JSON.stringify(JSON.parse(d), undefined, 2)).addClass('pre');
+                } catch(e) {
+                    jqElm.parents('.section').find('div').html(d).removeClass('pre');
+                }
+            }
+        });
+
+        post.fail(function(elm, status, error){
+            jqElm.parents('.section').find('div').html(error).removeClass('pre');
+        });
+
+        e.preventDefault();
+    });
+});
+
+function removeEmptyParams(string){
+    return string.replace(/&{0,1}\w+=(&|$)/g, "$1");
+}
+</script>
+<style>
+.server-response {
+    width: 300px;
+    height: 20px;
+    border: 1px solid gray;
+    overflow: auto;
+    padding: 5px;
+}
+
+.pre {
+    white-space: pre;
+}
+</style>
+
+<title>Master Interface</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link href="style.css" rel="stylesheet" />
+</head>
+
+<body>
+<nav class="navbar navbar-default navebar-fixed-top" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navar-collapse-main"> 
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+
+          </button>
+          <a class="navbar-brand" href="#"><b class="head">Sportz App</b></a>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar-collapse-main">
+
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="index.html">Users</a></li>
+            <li><a href="notifications.html">Notifications</a></li>
+            <li><a href="gamestats.html">Game Stats</a></li>
+            <li><a class="active" href="team.html">Teams</a></li>
+          </ul>
+
+        </div> 
+    </div>
+</nav>
+
+<body>
+<div class="row">
+    <div class="column">
+        <h2>Create Team</h2>
+        <div class="section"/>
+            <a name="createTeam"></a>
+            <form>
+            <input type="hidden" name="action" value="createTeam"/>
+            <label>name:</label>      <input type="text" name="name"/><br/>
+            <label>sport:</label>   <input type="text" name="sport"/><br/>
+            <button type="submit">Submit</button>
+            </form>
+        </div>
+        <br>Server Response:<br/>
+            <div class="server-response"></div>
+    </div>
+    <div class="column">
+        <h2>Delete Team</h2>
+        <div class="section"/>
+            <a name="deleteTeam"></a>
+            <form>
+            <input type="hidden" name="action" value="deleteTeam"/>
+            <label>id:</label>     <input type="text" name="id"/><br/>
+            <label>name:</label>  <input type="text" name="name"/><br/>
+            <label>sport:</label>  <input type="text" name="sport"/><br/>
+            <button type="submit">Submit</button>
+            </form>
+
+        </div>
+         <br>Server Response:<br/>
+            <div class="server-response"></div>
+    </div>
+    <div class="column">
+        <h2>Add Game for Team</h2>
+        <div class="section"/>
+            <a name="createGame"></a>            
+            <form>
+            <input type="hidden" name="action" value="creatGame"/>
+            <label>sport:</label>      <input type="text" name="sport"/><br/>
+            <label>team:</label>   <input type="text" name="team"/><br/>
+            <label>opponent:</label>  <input type="text" name="opponent"/><br/>
+            <label>location:</label>     <input type="text" name="location"/><br/>
+            <label>field:</label>     <input type="text" name="field"/><br/>    
+            <label>tournament:</label>      <input type="text" name="tournament"/><br/>
+            <button type="submit">Submit</button>
+            </form>
+        </div>
+        <br>Server Response:<br/>
+            <div class="server-response"></div>
+    </div>
+</div>
+</body>
+
+<div id="fixed">  
+</div>
+
+</body>
+</html>

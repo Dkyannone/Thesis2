@@ -1,0 +1,160 @@
+html, body{
+	height: 100%;
+	width: 100%;
+}
+
+.navbar{
+	background-color: #41393d;
+	padding: 1% 0;
+	font-size: 1.2em;
+}
+
+.navbar-brand{
+	min-height: 100px;
+	padding: 20px 15px 5px 15px;
+	font-size: 60px;
+
+}
+.head{
+	color: white;
+}
+
+.navbar-default .navbar-nav li a{
+	color:#fff;
+}
+
+.navbar-default .navbar-nav li a:hover, .navbar-default .navbar-nav li a.active {
+	color:#8a8c8f;
+}
+
+#home {
+	background: url(images/chicken.jpg) no-repeat center center fixed;
+	display: table;
+	height: 100%;
+	position: relative;
+	width: 100%;
+	background-size: cover;
+}
+
+.landing-text {
+	display: table-cell;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.landing-text h1 {
+	font-size: 300%;
+	font-weight: 700;
+}
+
+.padding{
+	padding: 80px 0;
+}
+
+.padding img{
+	width: 100%;
+}
+
+#fixed {
+	background: url(images/chinese_36.jpg) no-repeat center center fixed;
+	display: table;
+	height: 40%;
+	position: relative;
+	width: 100%;
+	background-size: cover;
+}
+
+footer{
+	width: 100%;
+	background-color: #be1e2d;
+	padding: 5% 5% 10% 5%;
+	color: #8a8c8f;
+
+}
+
+.fa {
+	padding: 15px;
+	font-size: 25px;
+	color: #41393d;
+}
+
+.fa:hover{
+	color: #8a8c8f;
+	text-decoration: none;
+}
+
+.icon {
+	max-width: 200px;
+
+}
+
+.section{
+	background-color: #41393d;
+	padding-top: 80px;
+	padding-bottom: 200px;
+	padding-left: 5px;
+	font-size: 1.2em;
+}
+
+.column {
+  float: left;
+  width: 33.33%;
+  padding-left: 20px;
+}
+
+.columnSingle {
+  float: left;
+  align-content: center;
+  width: 33.33%;
+  padding-left: 20px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.content{
+	height: 80px;
+}
+
+input{
+	margin-left: 50px;
+	margin-right: 20px;
+	padding: 0 15px 5px 15px;
+	margin-bottom: 10px;
+	display: inline-block;
+  	float: left;
+
+}
+button{
+	margin-left: 100px;
+	margin-right: 20px;
+	padding: 0 15px 5px 15px;
+	margin-bottom: 10px;
+	display: inline-block;
+  	float: left;
+}
+
+label{
+    display: inline-block;
+    float: left;
+    clear: left;
+    width: 50px;
+    height: 20px;
+    text-align: left;
+    color: #8a8c8f;
+}
+
+
+
+
+
+
+
+
+
+
+
